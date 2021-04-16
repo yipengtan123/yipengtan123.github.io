@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID": "8ENGTFQ64L.com.flick.flickmobile",
-                "paths": ["*"],
+                "paths": ["*"]
             }
         ]
     }
