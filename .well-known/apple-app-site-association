@@ -1,12 +1,11 @@
 {
-	"appLinks": {
-		"apps": [],
-		"details": [ {} ]
-	},
-	"webcredentials": {
-		"apps": [
-			"PCKD479686.uhohPro",
-			"PCKD479686.uhohApp"
-		]
-	}
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "8ENGTFQ64L.com.flick.flickmobile",
+                "paths": ["*"],
+            }
+        ]
+    }
 }
