@@ -1,0 +1,51 @@
+<head>
+ <title></title>
+<script type="text/javascript">
+		function doOnLoad(){
+			if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i) ||
+				navigator.userAgent.match(/android/i)) {
+			  var store_loc = "https://itunes.apple.com/app/1518759300";
+			  var href = "/iphone/";
+			  var is_android = false;
+			  if (navigator.userAgent.match(/android/i)) {
+				store_loc = "https://play.google.com/store/apps/details?id=com.flick.flickmobile";
+				href = "/android/";
+				is_android = true;
+			  }
+			  if (location.hash) {
+				var app_loc = "com.flick.flickmobile";
+				if (is_android) {
+				  var w = null;
+				  try {
+					w = window.open(app_loc, '_blank');
+				  } catch (e) {
+					// no exception
+				  }
+				  if (w) { window.close(); }
+				  else { window.location = store_loc; }
+				} else {
+				  var loadDateTime = new Date();
+				  window.setTimeout(function() {
+					var timeOutDateTime = new Date();
+					if (timeOutDateTime - loadDateTime < 5000) {
+					  window.location = store_loc;
+					} else { window.close(); }
+				  },
+				  25);
+				  window.location = app_loc;
+				}
+			  } else {
+				location.href = href;
+			  }
+			}
+			
+		}
+// if iPod / iPhone, display install app prompt
+
+</script>
+</head>
+<body>
+<a href="intent://gallery?directLink=true#Intent;scheme=com.flick.flickmobile;package=com.flick.flickmobile;end"> 
+  Click me 
+</a>
+</body>
