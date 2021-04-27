@@ -2,15 +2,30 @@
  <title></title>
 <script type="text/javascript">
 		function open_appstore() {
-        window.location='http://itunes.apple.com/app/1518759300';
-    }
-
-    function try_to_open_app() {
-        setTimeout('open_appstore()', 300);
-    }
+			window.location='http://itunes.apple.com/app/1518759300';
+		}
+		function doOnLoad(){
+			if(navigator.userAgent.match(/android/i)){
+				var store_loc = "https://play.google.com/store/apps/details?id=com.flick.flickmobile"
+				var w = null;
+				try {
+					document.getElementById("openApp").click();
+				}
+				catch (e) {
+				
+				}
+				window.setTimeout(function() {
+					window.location = store_loc;
+				},3000)
+			}
+			else if(navigator.userAgent.match(/iPhone|iPad/)){
+				setTimeout('open_appstore()', 300);
+			}
+		}
 </script>
 </head>
-<body onload="javascript:try_to_open_app()">
+<body onload="doOnLoad()">
 	
-<!-- <a onClick="javascript:try_to_open_app();" href="https://yipengtan123.hithub.io:">Open Apps</a> -->
+<a onclick="doOnLoad()">Click this link to launch you app from web</a>
+<a style="display:none" href = "flickmobile://com.flick.flickmobile?X=toto&p=test" id="openApp"> Open App</a>
 </body>
