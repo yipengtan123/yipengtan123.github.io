@@ -1,0 +1,41 @@
+<head>
+ <title></title>
+<script type="text/javascript">
+		function open_appstore() {
+			window.location='http://itunes.apple.com/app/1518759300';
+		}
+		function doOnLoad(){
+			if(navigator.userAgent.match(/android/i)){
+				var store_loc = "https://play.google.com/store/apps/details?id=com.flick.flickmobile"
+				var w = null;
+				try {
+					const urlParams = new URLSearchParams(window.location.search);
+					document.getElementById("openApp").href = window.location;
+					document.getElementById("openApp").click();
+				}
+				catch (e) {
+				
+				}
+				window.setTimeout(function() {
+					window.location = store_loc;
+				},3000)
+			}
+			else if(navigator.userAgent.match(/iPhone|iPad/)){
+				setTimeout('open_appstore()', 300);
+			}
+		}
+		function getParameterByName(name, url = window.location.href) {
+			name = name.replace(/[\[\]]/g, '\\$&');
+			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+</script>
+</head>
+<body onload="doOnLoad()">
+	
+<a onclick="doOnLoad()">Click this link to launch you app from web</a>
+<a style="display:none" href = "flickmobile://com.flick.flickmobile?X=toto&p=test" id="openApp"> Open App</a>
+</body>
