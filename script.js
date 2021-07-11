@@ -105,7 +105,15 @@ var myChart;
                     },
                     tooltip: {
                         mode: 'index',
-                        intersect: false
+                        intersect: false,
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return tooltipItem[0].label;
+                            },
+                            label: function (tooltipItem, data) {
+                                return tooltipItem.formattedValue;
+                            },
+                        }
                     },
                     title: {
                         display: true,
