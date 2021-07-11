@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body style="height: 100%">
+    <form id="form1"  style="height: 100%">
+        <div>
+            <div>
+                <span style="width:30px;float:left;text-align:center">B/S</span>
+                <span style="width:60px;float:left;margin-left: 25px;text-align:center">Strike</span>
+                <span style="width:45px;float:left;margin-left: 30px;text-align:center">CE/PE</span>
+                <span style="width:40px;float:left;margin-left: 12px;text-align:center">Lots</span>
+                <span style="width:60px;float:left;margin-left: 15px;text-align:center">Price</span>
+                <span style="float:left;margin-left: 15px;">Lot Size :</span>
+                <input id="LotSize" type="number" style="width:60px;float:left;" value="1500" onchange="getData()" />
+                <span style="float:left;margin-left: 23px;width:150px;">Max Profit :</span>
+                <span id="MaxProfit" style="float:left;"></span>
+            </div>
+            <div style="float:left; width: 100%;">
+                <span style="width:30px;float:left;text-align:center">S</span>
+                <input id="Strike1" type="number" style="width:60px;float:left;margin-left: 25px" value="425" onchange="getData()" />
+                <span style="width:45px;float:left;margin-left: 25px;text-align:center">PE</span>
+                <span style="width:33px;float:left;margin-left: 25px">1</span>
+                <input id="Price1" type="number" style="width:60px;float:left;margin-left: 5px" value="10.6" onchange="getData()" />
+                <span style="float:left;margin-left: 162px;width:150px;">Max Loss :</span>
+                <span id="MaxLoss" style="float:left;"></span>
+            </div>
+            <div style="float:left; width: 100%;">
+                <span style="width:30px;float:left;text-align:center">S</span>
+                <input id="Strike2" type="number" style="width:60px;float:left;margin-left: 25px" value="425" onchange="getData()" />
+                <span style="width:45px;float:left;margin-left: 25px;text-align:center">CE</span>
+                <span style="width:33px;float:left;margin-left: 25px">1</span>
+                <input id="Price2" type="number" style="width:60px;float:left;margin-left: 5px" value="11.65" onchange="getData()" />
+                <span style="float:left;margin-left: 162px;width:150px;">Breakeven at expiry :</span>
+                <span id="Breakeven" style="float:left;"></span>
+            </div>
+            <div style="float:left; width: 100%;">
+                <span style="width:30px;float:left;text-align:center">B</span>
+                <input id="Strike3" type="number" style="width:60px;float:left;margin-left: 25px" value="415" onchange="getData()" />
+                <span style="width:45px;float:left;margin-left: 25px;text-align:center">PE</span>
+                <span style="width:33px;float:left;margin-left: 25px">1</span>
+                <input id="Price3" type="number" style="width:60px;float:left;margin-left: 5px" value="6.55" onchange="getData()" />
+            </div>
+            <div style="float:left; width: 100%;">
+                <span style="width:30px;float:left;text-align:center">B</span>
+                <input id="Strike4" type="number" style="width:60px;float:left;margin-left: 25px" value="435" onchange="getData()" />
+                <span style="width:45px;float:left;margin-left: 25px;text-align:center">CE</span>
+                <span style="width:33px;float:left;margin-left: 25px">1</span>
+                <input id="Price4" type="number" style="width:60px;float:left;margin-left: 5px" value="7.6" onchange="getData()" />
+            </div>
+        </div>
+        <div style="height: 370px;width:768px">
+            <canvas id="myChart"></canvas>
+        </div>
+    </form>
+</body>
+</html>
