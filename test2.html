@@ -52,9 +52,8 @@
 </head>
 <body style="height: 100%">
     <form id="form1"  style="height: 100%">
-
-		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-width=""  data-size="medium" data-button-type="login_with" data-layout="default" >
-		</fb:login-button>
+		<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-scope="email" onlogin="checkLoginState();"></div>
+		
 <div id="status">
 		</div>
     </form>
