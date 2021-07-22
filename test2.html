@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId      : 'Test',
+		  cookie     : true,
+		  xfbml      : true,
+		  version    : 'v11.0'
+		});
+		  
+		FB.AppEvents.logPageView();   
+		  
+	  };
+
+	  (function(d, s, id){
+		 var js, fjs = d.getElementsByTagName(s)[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement(s); js.id = id;
+		 js.src = "https://connect.facebook.net/en_US/sdk.js";
+		 fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+</head>
+<body style="height: 100%">
+    <form id="form1"  style="height: 100%">
+        <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+    </form>
+</body>
+</html>
