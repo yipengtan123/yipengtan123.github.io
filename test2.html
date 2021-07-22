@@ -46,13 +46,15 @@
 			  console.log('Successful login for: ' + response.name);
 			  document.getElementById('status').innerHTML =
 				'Thanks for logging in, ' + response.name + '!';
+				document.getElementById('btnLogin').style.display = 'none';
+
 			});
 		  }
 	</script>
 </head>
 <body style="height: 100%">
     <form id="form1"  style="height: 100%">
-		<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-scope="email" onlogin="checkLoginState();"></div>
+		<div id="btnLogin" class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-scope="email" onlogin="checkLoginState();"></div>
 		
 <div id="status">
 		</div>
