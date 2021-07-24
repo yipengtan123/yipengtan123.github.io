@@ -3,6 +3,8 @@
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="474758723097-2pd0t5ui1ehsdg2oue6k5desdp0q9eqt.apps.googleusercontent.com">
 	<script>
 	  window.fbAsyncInit = function() {
 		FB.init({
@@ -50,13 +52,25 @@
 
 			});
 		  }
+		  function onSignIn(googleUser) {
+			  var profile = googleUser.getBasicProfile();
+			  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			  console.log('Name: ' + profile.getName());
+			  console.log('Image URL: ' + profile.getImageUrl());
+			  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			  document.getElementById('status2').innerHTML =
+				'Thanks for logging in, ' + profile.getName() + '!';
+				document.getElementById('btnLogin2').style.display = 'none';
+			}
 	</script>
 </head>
 <body style="height: 100%; margin: 0;">
     <form id="form1">
 		<div id="btnLogin" class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-scope="email" onlogin="checkLoginState();"></div>
-		
+		<div  id="btnLogin2" class="g-signin2" data-onsuccess="onSignIn"></div>
+
 <div id="status">
+<div id="status2">
 		</div>
     </form>
 </body>
