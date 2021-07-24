@@ -36,7 +36,6 @@
     }
   }
 
-
   function checkLoginState() {               // Called when a person is finished with the Login Button.
     FB.getLoginStatus(function(response) {   // See the onlogin handler
       statusChangeCallback(response);
@@ -62,6 +61,11 @@
 				'Thanks for logging in, ' + profile.getName() + '!';
 				document.getElementById('btnLogin2').style.display = 'none';
 			}
+			
+$( document ).ready(function() {
+checkLoginState();
+
+});
 	</script>
 </head>
 <body style="height: 100%; margin: 0;">
